@@ -73,7 +73,7 @@ const sketch = ({ context, width, height }) => {
       context.fillStyle = fill;
       context.lineWidth = 10;
 
-      context.globalCompositionOperation = blend;
+      context.globalCompositeOperation = blend;
 
       drawSkewedRect({context, w, h, degrees});
 
@@ -89,7 +89,7 @@ const sketch = ({ context, width, height }) => {
       context.shadowColor = null;
       context.stroke();
       
-      context.globalCompositionOperation = 'source-over';
+      context.globalCompositeOperation = 'source-over';
 
       context.lineWidth = 2;
       context.strokeStyle = 'black';
@@ -105,7 +105,7 @@ const sketch = ({ context, width, height }) => {
 
     drawPolygon({context, radius: mask.radius - context.lineWidth, sides: mask.sides});
 
-    context.globalCompositionOperation = 'color-burn';
+    context.globalCompositeOperation = 'color-burn';
     context.strokeStyle = rectColors[0].hex;
     context.stroke();
 
