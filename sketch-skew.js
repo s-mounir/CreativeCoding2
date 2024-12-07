@@ -4,12 +4,16 @@ const random = require('canvas-sketch-util/random');
 const Color = require('canvas-sketch-util/color');
 const risoColors = require('riso-colors');
 
+const seed = random.getRandomSeed();
+
 const settings = {
   dimensions: [ 1080, 1080 ],
   animate: true
 };
 
 const sketch = ({ context, width, height }) => {
+  random.setSeed(seed);
+
   let x, y, w, h, fill, stroke, blend;
 
   const num = 40;
@@ -27,7 +31,7 @@ const sketch = ({ context, width, height }) => {
     radius: width * 0.4,
     sides: 3,
     x: width * 0.5,
-    y: height * 0.5,
+    y: height * 0.58,
   }
 
   for (let i = 0; i < num; i++){
